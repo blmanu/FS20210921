@@ -4,51 +4,53 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Videclub</title>
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
+    <title>Sakila</title>
 </head>
 <body>
     <header>
-        <h1>Videoclub</h1>
+        <div style="background-color: black;">
+            <img src="./images/logo.png" alt="Logotipo de ViewNext" >
+        </div>
         <nav>
-            <ul>
-                <li><a href="#cliente">Cliente</a></li>
-                <li><a href="#inventario">Inventario</a></li>
-                <li><a href="#negocio">Negocio</a></li>
-            </ul>
+            <a href="catalogo">catalogo</a>
+            <a href="tiendas">tiendas</a>
         </nav>
+        <form >
+            <input type="text" name="user" placeholder="Usuario">
+            <input type="password" name="password" placeholder="Contraseña">
+            <input type="submit" value="Login" >
+        </form>
     </header>
-    <section>
-        <header>
-            <h3> Videoclub Sekila</h3>
-        </header>
-        <article id="cliente">
-            <h4>Datos del cliente</h4>
-            <div>Nombre completo: fulanito perez</div>
-            <div>Email: fulanito.perez@mail.com</div>
-            <div>Peliculas alquiladas</div>
-            <div>Peliculas compradas</div>
-        </article>
-        <article id="inventario">
-            <h4>Inventario</h4>
-            <div>
-                <div>Nombre</div>
-                <div>Director</div>
-                <div>Duracion</div>
-                <div>Categoría</div>
-                <div>Actores</div>
-                <div>Idioma</div>
-                <div>Descripcion</div>
-            </div>
-            
-        </article>
-        <article id="negocio">
-            <h4>Negocio</h4>
-            <div>Plantilla</div>
-            <div>Tienda</div>
-            <div>Pago</div>
-            <div>Alquiler</div>
-        </article>
-        
-    </section>
+    <main>
+        <section>
+            <header>
+                Novedades
+            </header>
+            <article>
+                <figure>
+                    <img src="https://picsum.photos/200?rnd=1">
+                </figure>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis animi repellat, ipsum consequuntur reiciendis qui repellendus dignissimos aspernatur provident ipsa eligendi repudiandae soluta corporis quidem ea asperiores enim deleniti maiores?
+            </article>
+            <article>
+                <figure>
+                    <img src="https://picsum.photos/200?rnd=2">
+                </figure>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis animi repellat, ipsum consequuntur reiciendis qui repellendus dignissimos aspernatur provident ipsa eligendi repudiandae soluta corporis quidem ea asperiores enim deleniti maiores?
+            </article>
+            <article>
+                <figure>
+                    <img src="https://picsum.photos/200?rnd=3">
+                </figure>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis animi repellat, ipsum consequuntur reiciendis qui repellendus dignissimos aspernatur provident ipsa eligendi repudiandae soluta corporis quidem ea asperiores enim deleniti maiores?
+            </article>
+        </section>
+    </main>
+    <footer>
+        <div>
+            &copy; 2021 Todos los derechos reservados | <a href="/aviso-legal" target="_blank">Aviso Legal</a> | <a href="/politica-de-privacidad" target="_blank">Política de Privacidad</a> | <a href="/politica-de-cookies" target="_blank">Política de Cookies</a>
+        </div>
+    </footer>
 </body>
 </html>
