@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario cliente</title>
+</head>
+<body>
+    <h2>Datos clientes</h2>
+    <form>
+        <p>Id cliente: <input type="text"></p>
+        <p>Tienda <select name="select_tienda">
+            <option value="tienda1">Tienda 1</option>
+            <option value="tienda2">Tienda 2</option>
+            <option value="tienda3">Tienda 3</option>
+            </select></p>
+        <p>Nombre: <input type="text"></p>
+        <p>Apellidos: <input type="text"></p>
+        <p>Género: 
+            <input type="radio" name="genero" value="m">Hombre
+            <input type="radio" name="genero" value="f">Mujer</p>
+        <p>Fecha nacimiento: <input type="date" name="fechaNacimiento"></p> 
+        <p>Foto: <input type="file" name="foto"></p> 
+        <p>Email <input type="email" name="email"></p>
+        <p>Activo <select name="selct_activo" >
+            <option value="True">True</option>
+            <option value="False">False</option>
+        </select></p>
+    </form>
+</body>
+</html>
