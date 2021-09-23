@@ -1,17 +1,67 @@
-body > header > div{
+.container{
+    display:grid;
+    grid-template-rows: 8rem auto min-content;
+    grid-template-areas:
+        "header"
+        "main"
+        "footer";
+}
+.container > header{
+    grid-area: header;
     background-color: lightblue;
-}
-body > header > nav{
-    background-color: rgb(33, 33, 99);
-    color:white;
-    display: grid;
-}
-a { 
-    width: 50%;
-    text-decoration: none;
-    border: solid;
+    display: flex;
+    flex-wrap: wrap;
 }
 
+.container > header div{
+    width: 100%;
+}
+
+header nav a{
+    border: solid 1px;
+    text-decoration: none;
+    padding: 0.5vw 10vw .5vw 10vw;
+    background-color: blue;
+}
 a:link{
-    color: white;
+    color:black
+}
+
+.container > main{
+    grid-area: main;
+}
+
+.section-container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+}
+
+.container > main section > header{
+    width: 100%;
+    text-align: center;
+}
+
+.section-container article{
+    width: minmax(max-width, 300px);
+    padding: 2vw;
+    margin: 1vw;
+    text-align: justify;
+}
+article img{
+    display: block;
+    margin: auto;
+}
+article p{
+    margin: auto;
+    padding: 1em;
+}
+
+.container > footer{
+    grid-area: footer;
+    background-color: lightblue;
+}
+
+footer *{
+    margin-right: 2vw;
 }
