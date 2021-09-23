@@ -1,0 +1,17 @@
+body > header > div{
+    background-color: lightblue;
+}
+body > header > nav{
+    background-color: rgb(33, 33, 99);
+    color:white;
+    display: grid;
+}
+a { 
+    width: 50%;
+    text-decoration: none;
+    border: solid;
+}
+
+a:link{
+    color: white;
+}
