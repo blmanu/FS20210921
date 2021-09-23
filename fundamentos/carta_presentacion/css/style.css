@@ -1,0 +1,91 @@
+@import url(variables.css);
+
+*{
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body{
+    background-color: var(--principal-color, white);
+}
+
+body > header{
+    background-color: var(--secundario-color, lightgrey);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+body > header img{
+    width: 13em;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.texto-cabecera{
+    margin:auto;
+    padding: 2vh;
+    text-align: center;
+}
+
+.texto-cabecera h2{    
+    font-size: 2em;    
+}
+
+.texto-cabecera h3{
+    color: var(--principal-color,white);
+}
+
+main{
+    text-align: center;
+    display: flex;
+}
+section > header{
+    font-size: 1em;
+}
+section article{
+    width: 100%;
+    margin: auto;
+    margin-bottom: 2vh; 
+}
+
+article p{
+    text-align: justify;
+    padding: 1vw 10vw 0 10vw;
+}
+
+article h5{
+    background-color: var(--secundario-color);
+}
+
+li{    
+    list-style: none;
+    text-align: left;
+}
+article ul li{
+    
+    text-align: center;
+}
+li span{
+    position: relative;
+    left: -3em;
+}
+
+footer{
+    background-color: var(--secundario-color);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer div{
+    width: 20em;
+    margin: 0 auto;
+    
+}
+.contacto{
+    margin-left: 2em;
+}
+
+.redes{
+    margin-left: 2em;
+}
+
