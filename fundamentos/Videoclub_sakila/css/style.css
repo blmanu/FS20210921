@@ -1,6 +1,9 @@
+@import url(variables.css);
+
 .container{
+    background-color: var(--principal-color);
     display:grid;
-    grid-template-rows: 8rem auto min-content;
+    grid-template-rows: 10rem auto min-content;
     grid-template-areas:
         "header"
         "main"
@@ -8,23 +11,54 @@
 }
 .container > header{
     grid-area: header;
-    background-color: lightblue;
+    background-color:var(--secundario-color);
     display: flex;
     flex-wrap: wrap;
+    text-align: center;
 }
 
 .container > header div{
     width: 100%;
+    padding-top: 1em;
+}
+.header-container{
+    display:grid;
+    gap: 1em;
+    grid-template-areas: 
+            "form"
+            "nav";
+    padding: 1em;
+}
+.header-container nav{
+    grid-area: nav;
+    margin-right: 1em;
+    display: block;
+    margin:auto;
 }
 
-header nav a{
-    border: solid 1px;
+.header-container nav a{
     text-decoration: none;
-    padding: 0.5vw 10vw .5vw 10vw;
-    background-color: blue;
+    padding: 0.5em 2em .5em 2em;
+    color: var(--principal-color);
 }
+
+.header-container nav a:hover{
+    background-color: #000;
+
+}
+
+.header-container form{
+    grid-area: form;
+    
+    display: block;
+    margin:auto;
+}
+.header-container form input{
+    width: 100px;
+}
+
 a:link{
-    color:black
+    color: var(--principal-color);
 }
 
 .container > main{
@@ -40,6 +74,7 @@ a:link{
 .container > main section > header{
     width: 100%;
     text-align: center;
+    font-size: 1.5em;
 }
 
 .section-container article{
@@ -48,9 +83,11 @@ a:link{
     margin: 1vw;
     text-align: justify;
 }
+
 article img{
     display: block;
     margin: auto;
+    width: 100%;
 }
 article p{
     margin: auto;
@@ -59,9 +96,18 @@ article p{
 
 .container > footer{
     grid-area: footer;
-    background-color: lightblue;
+    background-color: var(--secundario-color);
+    color: var(--principal-color);
+    text-align: center;
 }
 
-footer *{
-    margin-right: 2vw;
+footer *{    
+    margin-left: 1em;
+}
+
+@media (min-width: 740px) {
+    .header-container{
+        grid-template-areas: 
+            "nav form";
+    }
 }
