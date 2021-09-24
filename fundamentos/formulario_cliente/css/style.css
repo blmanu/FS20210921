@@ -21,6 +21,20 @@ main form div{
     margin:auto;
     padding: 1em;
 }
+
+main form div label{
+    margin-right: 2em;
+}
+
+main form div select{
+    background-color: transparent;
+    border-color: #eee;
+}
+
+main form div select:hover{
+    background-color: #eee;
+}
+
 main form div input{
     margin-top: 1em;
     border: none;
