@@ -1,0 +1,101 @@
+@import url(variables.css);
+@import url(formulario.css);
+.container {
+	background-color: var(--principal-color);
+	display: grid;
+	grid-template-rows: 10rem auto min-content;
+	grid-template-areas: "header" "main" "footer";
+	>header {
+		grid-area: header;
+		background-color: var(--secundario-color);
+		display: flex;
+		flex-wrap: wrap;
+		text-align: center;
+		div {
+			width: 100%;
+			padding-top: 1em;
+		}
+	}
+	>main {
+		grid-area: main;
+		section {
+			>header {
+				width: 100%;
+				text-align: center;
+				font-size: 1.5em;
+			}
+		}
+	}
+	>footer {
+		grid-area: footer;
+		background-color: var(--secundario-color);
+		color: var(--principal-color);
+		text-align: center;
+        * {
+            margin-left: 1em;
+        }
+        a{
+            text-decoration: none;
+            color: var(--principal-color);
+            &:link{
+		        color: var(--principal-color);                
+            }
+        }
+	}
+}
+.header-container {
+	display: grid;
+	gap: 1em;
+	grid-template-areas: "form" "nav";
+	padding: 1em;
+	nav {
+		grid-area: nav;
+		margin-right: 1em;
+		display: block;
+		margin: auto;
+		a {
+			text-decoration: none;
+			padding: 0.5em 2em 0.5em 2em;
+			color: var(--principal-color);
+			&:hover {
+				background-color: #000;
+			}
+            &:link {
+		        color: var(--principal-color);
+	        }
+		}
+	}
+	form {
+		grid-area: form;
+		display: block;
+		margin: auto;
+		input {
+			width: 100px;
+		}
+	}
+}
+.section-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	justify-content: center;
+	article {
+		width: minmax(max-width, 300px);
+		padding: 2vw;
+		margin: 1vw;
+		text-align: justify;
+        img {
+            display: block;
+            margin: auto;
+            width: 100%;
+        }
+        p {
+            margin: auto;
+            padding: 1em;
+        }
+	}
+}
+@media (min-width: 740px) {
+	.header-container {
+		grid-template-areas: "nav form";
+	}
+}

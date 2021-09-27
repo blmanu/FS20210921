@@ -19,7 +19,7 @@ main form{
 main form div{
     display: block;
     margin:auto;
-    padding: 1em;
+    padding: 10px;
 }
 
 main form div label{

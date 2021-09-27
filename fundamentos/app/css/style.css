@@ -1,0 +1,104 @@
+@import url(variables.css);
+@import url(formulario.css);
+.container {
+  background-color: var(--principal-color);
+  display: grid;
+  grid-template-rows: 10rem auto min-content;
+  grid-template-areas: "header" "main" "footer";
+}
+.container > header {
+  grid-area: header;
+  background-color: var(--secundario-color);
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.container > header div {
+  width: 100%;
+  padding-top: 1em;
+}
+.container > main {
+  grid-area: main;
+}
+.container > main section > header {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+}
+.container > footer {
+  grid-area: footer;
+  background-color: var(--secundario-color);
+  color: var(--principal-color);
+  text-align: center;
+}
+.container > footer * {
+  margin-left: 1em;
+}
+.container > footer a {
+  text-decoration: none;
+  color: var(--principal-color);
+}
+.container > footer a:link {
+  color: var(--principal-color);
+}
+
+.header-container {
+  display: grid;
+  gap: 1em;
+  grid-template-areas: "form" "nav";
+  padding: 1em;
+}
+.header-container nav {
+  grid-area: nav;
+  margin-right: 1em;
+  display: block;
+  margin: auto;
+}
+.header-container nav a {
+  text-decoration: none;
+  padding: 0.5em 2em 0.5em 2em;
+  color: var(--principal-color);
+}
+.header-container nav a:hover {
+  background-color: #000;
+}
+.header-container nav a:link {
+  color: var(--principal-color);
+}
+.header-container form {
+  grid-area: form;
+  display: block;
+  margin: auto;
+}
+.header-container form input {
+  width: 100px;
+}
+
+.section-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: center;
+}
+.section-container article {
+  width: minmax(max-width, 300px);
+  padding: 2vw;
+  margin: 1vw;
+  text-align: justify;
+}
+.section-container article img {
+  display: block;
+  margin: auto;
+  width: 100%;
+}
+.section-container article p {
+  margin: auto;
+  padding: 1em;
+}
+
+@media (min-width: 740px) {
+  .header-container {
+    grid-template-areas: "nav form";
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
