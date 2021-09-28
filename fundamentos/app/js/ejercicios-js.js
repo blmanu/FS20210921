@@ -82,6 +82,7 @@ console.log(numerosPrimosEntreEstosNumeros(0,100));
 //Ejercicio 5
 
 //https://donnierock.com/2011/11/05/validar-un-dni-con-javascript/
+
 function nif(dni) {
     let numero;
     let letr;
@@ -106,10 +107,11 @@ function nif(dni) {
      }
   }
 
-  //nif("44667260H");
-
   //Ejercicio 6
-
+  function quitarEspaciosVacios(cadena){
+      let cad = cadena.split(" ").join("");
+      return cad;
+  }
   function invertir(cadena){
       let cadenaInvertida = "";
       for(let i = cadena.length-1; i >= 0; i--){
@@ -117,10 +119,10 @@ function nif(dni) {
       }
       return cadenaInvertida;
   }
-  console.log(invertir(invertir("pepe")))
 
   function esPalindromo(cadena){
-      return (cadena === invertir(cadena));        
+      let cad = quitarEspaciosVacios(cadena).toUpperCase();
+      return (cad === invertir(cad));        
   }
 
-  console.log(esPalindromo("ama"));
+  console.log(esPalindromo("La ruta nos aporto otro paso natural"));
