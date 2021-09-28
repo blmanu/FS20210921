@@ -3,8 +3,6 @@ function random(min, max){
     return Math.floor((Math.random() * (max-min)) +min);
 }
 
-console.log(random(99,100));
-
 //Ejercicio 2
 
 function comparacion(a, b){
@@ -55,8 +53,6 @@ function inicializarArray(longitud, valor){
     return array;
 }
 
-console.log(inicializarArray(4,""));
-
 //Ejercicio 4
 
 function esPrimo(num){
@@ -75,10 +71,6 @@ function numerosPrimosEntreEstosNumeros(a,b){
     }
     return arrayPrimos;
 }
-
-console.log(numerosPrimosEntreEstosNumeros(0,100));
-
-
 //Ejercicio 5
 
 //https://donnierock.com/2011/11/05/validar-un-dni-con-javascript/
@@ -124,5 +116,3 @@ function nif(dni) {
       let cad = quitarEspaciosVacios(cadena).toUpperCase();
       return (cad === invertir(cad));        
   }
-
-  console.log(esPalindromo("La ruta nos aporto otro paso natural"));
