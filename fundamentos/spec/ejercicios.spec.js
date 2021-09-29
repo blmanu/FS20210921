@@ -10,6 +10,22 @@ describe("ejercicio 1", function () {
   });
 });
 
+fdescribe("ejercicio 2", function(){
+    let juego = new Juego();
+    juego.NumeroABuscar = 10;
+    it("comparacion mayor", () => {
+        expect(juego.comparar(5)).toBe("es mayor");
+    })
+
+    it("comparacion menor", () => {
+        expect(juego.comparar(15)).toBe("es menor");
+    })
+
+    it("comparacion igual", () => {
+        expect(juego.comparar(10)).toBe("son iguales");
+    })
+})
+
 describe("ejercicio 3", function () {
   it("inicializarArray", function () {
     let arr = inicializarArray(5, 0);
@@ -49,7 +65,7 @@ describe("ejercicio 5", function () {
   });
 });
 
-fdescribe("Ejercicio 6", function () {
+describe("Ejercicio 6", function () {
   let arrayBien = ["ana", "La ruta nos aporto otro paso natural"].forEach(
     (caso) => {
       it("Palindromo correcto " + `${caso}`, function () {
