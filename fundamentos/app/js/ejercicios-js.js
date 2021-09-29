@@ -1,5 +1,6 @@
 //Ejercicio 1
 function random(min, max){
+    if(typeof min != 'number' || typeof max != 'number') return null;
     return Math.floor((Math.random() * (max-min)) +min);
 }
 
@@ -74,7 +75,7 @@ function numerosPrimosEntreEstosNumeros(a,b){
 
 //https://donnierock.com/2011/11/05/validar-un-dni-con-javascript/
 
-function nif(dni) {
+function esNif(dni) {
     let numero;
     let letr;
     let letra;

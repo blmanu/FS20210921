@@ -4,6 +4,10 @@ describe('ejercicio 1', function(){
         expect(random(2, 18)).toBeGreaterThanOrEqual(2);
         expect(random(2, 18)).toBeLessThan(18);
     })
+
+    it('fallo entrada', function(){
+        expect(random('a', 2)).toBeNull();
+    })
 })
 
 describe('ejercicio 3', function(){
@@ -52,7 +56,7 @@ describe('ejercicio 5', function(){
 
         expect(nif(DNIcorrecto)).toBeTrue();
     })
-    
+
     let dniMal = ["00000000J", "09654HHH"].forEach(caso => {
         it('DNI incorrecto '+`${caso}`, function(){
 
