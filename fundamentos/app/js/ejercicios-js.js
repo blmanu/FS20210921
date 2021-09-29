@@ -4,7 +4,6 @@ function random(min, max){
 }
 
 //Ejercicio 2
-
 function comparacion(a, b){
     if(a===b) return "son iguales";
     else if(a > b) return "es menor";
@@ -80,6 +79,7 @@ function nif(dni) {
     let letr;
     let letra;
     let expresion_regular_dni;
+    let esDNI = true;
    
     expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
    
@@ -90,13 +90,18 @@ function nif(dni) {
        letra='TRWAGMYFPDXBNJZSQVHLCKET';
        letra=letra.substring(numero,numero+1);
       if (letra!=letr.toUpperCase()) {
-         alert('Dni erroneo, la letra del NIF no se corresponde');
+         console.log('Dni erroneo, la letra del NIF no se corresponde');
+         esDNI = false;
        }else{
-         alert('Dni correcto');
+         console.log('Dni correcto');
+         esDNI = true;
        }
     }else{
-       alert('Dni erroneo, formato no válido');
+       console.log('Dni erroneo, formato no válido');
+       esDNI = false;
      }
+
+     return esDNI;
   }
 
   //Ejercicio 6
