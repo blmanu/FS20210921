@@ -4,7 +4,10 @@ function random(min, max) {
     return Math.floor((Math.random() * (max - min)) + min);
 }
 
+
 //Ejercicio 2
+
+
 function comparacion(a, b) {
     if (a === b) return "son iguales";
     else if (a > b) return "es menor";
@@ -20,27 +23,41 @@ function pedirNumero() {
     return num;
 }
 
-function juego() {
-    const MAX_INTENTOS = 10;
-    let cont = 0;
-    alert("Vamos a empezar a jugar.");
-    const N_ALEATORIO = random(0, 100);
-    alert("Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos " + N_ALEATORIO);
-    while (cont < MAX_INTENTOS) {
-        alert("intento " + (cont + 1));
-        let num = pedirNumero();
-        let c = comparacion(num, N_ALEATORIO);
-        if (c === "son iguales") {
-            alert("Has ganado!!! El número era " + num);
-            return;
-        } else {
-            alert("Lo siento... Tu número " + c);
-            cont++;
-        }
+class Juego {
+
+    constructor() {
+        this.MAX_INTENTOS = 10;
+        this.NumIntentos = 0;
+        this.NumeroABuscar = random(0, 100);
+        this.JuegoTerminado = false;
+    }
+
+    comparar(numIntentado) {
+        return comparacion(numIntentado, this.NumeroABuscar);
     }
 }
 
-//juego();
+function jugar() {
+    alert("Vamos a empezar a jugar.");    
+    do {
+        let juego = new Juego();
+        alert("Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos " + juego.NumeroABuscar);
+        while (juego.NumIntentos < juego.MAX_INTENTOS && juego.JuegoTerminado === false) {
+            alert("intento " + (juego.NumIntentos + 1));
+            let num = pedirNumero();
+            let c = juego.comparar(num);
+            if (c === "son iguales") {
+                alert("Has ganado!!! El número era " + num);
+                juego.JuegoTerminado = true;
+            } else {
+                alert("Lo siento... Tu número " + c);
+                juego.NumIntentos++;
+            }
+        }
+    }while(confirm("¿Quieres volver a jugar?"));
+}
+
+//jugar();
 
 
 //Ejercicio 3
