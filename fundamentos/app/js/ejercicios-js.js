@@ -1,40 +1,40 @@
 //Ejercicio 1
-function random(min, max){
-    if(typeof min != 'number' || typeof max != 'number') return null;
-    return Math.floor((Math.random() * (max-min)) +min);
+function random(min, max) {
+    if (typeof min != 'number' || typeof max != 'number') return null;
+    return Math.floor((Math.random() * (max - min)) + min);
 }
 
 //Ejercicio 2
-function comparacion(a, b){
-    if(a===b) return "son iguales";
-    else if(a > b) return "es menor";
+function comparacion(a, b) {
+    if (a === b) return "son iguales";
+    else if (a > b) return "es menor";
     else return "es mayor";
 }
 
 
-function pedirNumero(){
+function pedirNumero() {
     let num = +prompt("Dime un número");
-    while(isNaN(num)){
+    while (isNaN(num)) {
         num = prompt("Dime otro, que tiene que ser un número");
     }
     return num;
 }
 
-function juego(){
+function juego() {
     const MAX_INTENTOS = 10;
     let cont = 0;
     alert("Vamos a empezar a jugar.");
-    const N_ALEATORIO = random(0,100);
-    alert("Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos "+N_ALEATORIO);
-    while(cont < MAX_INTENTOS){
-        alert("intento "+(cont+1));
+    const N_ALEATORIO = random(0, 100);
+    alert("Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos " + N_ALEATORIO);
+    while (cont < MAX_INTENTOS) {
+        alert("intento " + (cont + 1));
         let num = pedirNumero();
         let c = comparacion(num, N_ALEATORIO);
-        if(c ==="son iguales"){
-            alert("Has ganado!!! El número era "+num);
+        if (c === "son iguales") {
+            alert("Has ganado!!! El número era " + num);
             return;
-        }else{
-            alert("Lo siento... Tu número "+c);
+        } else {
+            alert("Lo siento... Tu número " + c);
             cont++;
         }
     }
@@ -45,28 +45,28 @@ function juego(){
 
 //Ejercicio 3
 
-function inicializarArray(longitud, valor){
-    if(typeof longitud !== 'number') return 'ERROR de longitud';
+function inicializarArray(longitud, valor) {
+    if (typeof longitud !== 'number') return 'ERROR de longitud';
     let array = new Array(longitud);
-    for(let i=0;i<array.length;i++)
-        array[i]=valor;
+    for (let i = 0; i < array.length; i++)
+        array[i] = valor;
     return array;
 }
 
 //Ejercicio 4
 
-function esPrimo(num){
-	if (num == 0 || num == 1) return false;
-	for (let i = 2; i < num; i++) {
-		if (num % i == 0) return false;
-	}
-	return true;
+function esPrimo(num) {
+    if (num == 0 || num == 1) return false;
+    for (let i = 2; i < num; i++) {
+        if (num % i == 0) return false;
+    }
+    return true;
 }
 
-function numerosPrimosEntreEstosNumeros(a,b){
+function numerosPrimosEntreEstosNumeros(a, b) {
     let arrayPrimos = new Array();
-    for(let i = a; i < b; i++){
-        if(esPrimo(i))
+    for (let i = a; i < b; i++) {
+        if (esPrimo(i))
             arrayPrimos.push(i);
     }
     return arrayPrimos;
@@ -81,44 +81,44 @@ function esNif(dni) {
     let letra;
     let expresion_regular_dni;
     let esDNI = true;
-   
+
     expresion_regular_dni = /^\d{8}[a-zA-Z]$/;
-   
-    if(expresion_regular_dni.test (dni) == true){
-       numero = dni.substr(0,dni.length-1);
-       letr = dni.substr(dni.length-1,1);
-       numero = numero % 23;
-       letra='TRWAGMYFPDXBNJZSQVHLCKET';
-       letra=letra.substring(numero,numero+1);
-      if (letra!=letr.toUpperCase()) {
-         console.log('Dni erroneo, la letra del NIF no se corresponde');
-         esDNI = false;
-       }else{
-         console.log('Dni correcto');
-         esDNI = true;
-       }
-    }else{
-       console.log('Dni erroneo, formato no válido');
-       esDNI = false;
-     }
 
-     return esDNI;
-  }
+    if (expresion_regular_dni.test(dni) == true) {
+        numero = dni.substr(0, dni.length - 1);
+        letr = dni.substr(dni.length - 1, 1);
+        numero = numero % 23;
+        letra = 'TRWAGMYFPDXBNJZSQVHLCKET';
+        letra = letra.substring(numero, numero + 1);
+        if (letra != letr.toUpperCase()) {
+            //console.log('Dni erroneo, la letra del NIF no se corresponde');
+            esDNI = false;
+        } else {
+            //console.log('Dni correcto');
+            esDNI = true;
+        }
+    } else {
+        //console.log('Dni erroneo, formato no válido');
+        esDNI = false;
+    }
 
-  //Ejercicio 6
-  function quitarEspaciosVacios(cadena){
-      let cad = cadena.split(" ").join("");
-      return cad;
-  }
-  function invertir(cadena){
-      let cadenaInvertida = "";
-      for(let i = cadena.length-1; i >= 0; i--){
-          cadenaInvertida += cadena.charAt(i);
-      }
-      return cadenaInvertida;
-  }
+    return esDNI;
+}
 
-  function esPalindromo(cadena){
-      let cad = quitarEspaciosVacios(cadena).toUpperCase();
-      return (cad === invertir(cad));        
-  }
+//Ejercicio 6
+function quitarEspaciosVacios(cadena) {
+    let cad = cadena.split(" ").join("");
+    return cad;
+}
+function invertir(cadena) {
+    let cadenaInvertida = "";
+    for (let i = cadena.length - 1; i >= 0; i--) {
+        cadenaInvertida += cadena.charAt(i);
+    }
+    return cadenaInvertida;
+}
+
+function esPalindromo(cadena) {
+    let cad = quitarEspaciosVacios(cadena).toUpperCase();
+    return (cad === invertir(cad));
+}
