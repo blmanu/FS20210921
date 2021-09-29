@@ -25,10 +25,10 @@ function pedirNumero(intento) {
 
 class Juego {
 
-    constructor() {
-        this.MAX_INTENTOS = 3;
+    constructor(max_intentos, max_valor) {
+        this.MAX_INTENTOS = max_intentos;
         this.NumIntentos = 0;
-        this.NumeroABuscar = random(0, 100);
+        this.NumeroABuscar = random(0, max_valor);
         this.JuegoTerminado = false;
     }
 
@@ -40,8 +40,10 @@ class Juego {
 function jugar() {
     alert("Vamos a empezar a jugar.");    
     do {
-        let juego = new Juego();
-        alert(`Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos... [${juego.NumeroABuscar}]`);
+        let max_intentos = 10;
+        let max_valor = 100;
+        let juego = new Juego(max_intentos, max_valor);
+        alert(`Acabo de generar un numero del 0 al ${max_valor}, intenta averiguarlo en menos de ${max_intentos} intentos... [${juego.NumeroABuscar}]`);
         while (juego.NumIntentos < juego.MAX_INTENTOS && juego.JuegoTerminado === false) {
             let num = pedirNumero(juego.NumIntentos);
             let c = juego.comparar(num);
@@ -56,10 +58,6 @@ function jugar() {
         if(juego.NumIntentos === juego.MAX_INTENTOS) alert(`Has perdido... el numero era ${juego.NumeroABuscar}`);
     }while(confirm("¿Quieres volver a jugar?"));
 }
-
-jugar();
-
-
 //Ejercicio 3
 
 function inicializarArray(longitud, valor) {
