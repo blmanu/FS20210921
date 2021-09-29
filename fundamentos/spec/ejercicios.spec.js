@@ -10,7 +10,7 @@ describe("ejercicio 1", function () {
   });
 });
 
-fdescribe("ejercicio 2", function(){
+describe("ejercicio 2", function(){
     let juego = new Juego();
     juego.NumeroABuscar = 10;
     it("comparacion mayor", () => {
@@ -58,9 +58,9 @@ describe("ejercicio 5", function () {
     expect(esNif(DNIcorrecto)).toBeTrue();
   });
 
-  let dniMal = ["00000000J", "09654HHH"].forEach((caso) => {
-    it("DNI incorrecto " + `${caso}`, function () {
-      expect(nif(caso)).toBeFalse();
+  let dniMal = ["00000000J", "09654HHH", null, undefined].forEach((caso) => {
+    it(`DNI incorrecto ${caso}`, function () {
+      expect(esNif(caso)).toBeTrue();
     });
   });
 });
@@ -68,7 +68,7 @@ describe("ejercicio 5", function () {
 describe("Ejercicio 6", function () {
   let arrayBien = ["ana", "La ruta nos aporto otro paso natural"].forEach(
     (caso) => {
-      it("Palindromo correcto " + `${caso}`, function () {
+      it(`Palindromo correcto ${caso}`, function () {
         expect(esPalindromo(caso)).toBeTrue();
       });
     }

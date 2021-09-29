@@ -15,10 +15,10 @@ function comparacion(a, b) {
 }
 
 
-function pedirNumero() {
-    let num = +prompt("Dime un número");
+function pedirNumero(intento) {
+    let num = +prompt(`Dime un número, intento ${intento+1}`);
     while (isNaN(num)) {
-        num = prompt("Dime otro, que tiene que ser un número");
+        num = prompt(`Dime otro, que tiene que ser un número, intento${intento+1}`);
     }
     return num;
 }
@@ -26,7 +26,7 @@ function pedirNumero() {
 class Juego {
 
     constructor() {
-        this.MAX_INTENTOS = 10;
+        this.MAX_INTENTOS = 3;
         this.NumIntentos = 0;
         this.NumeroABuscar = random(0, 100);
         this.JuegoTerminado = false;
@@ -41,10 +41,9 @@ function jugar() {
     alert("Vamos a empezar a jugar.");    
     do {
         let juego = new Juego();
-        alert("Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos " + juego.NumeroABuscar);
+        alert(`Acabo de generar un numero del 0 al 100, intenta averiguarlo en menos de 10 intentos... [${juego.NumeroABuscar}]`);
         while (juego.NumIntentos < juego.MAX_INTENTOS && juego.JuegoTerminado === false) {
-            alert("intento " + (juego.NumIntentos + 1));
-            let num = pedirNumero();
+            let num = pedirNumero(juego.NumIntentos);
             let c = juego.comparar(num);
             if (c === "son iguales") {
                 alert("Has ganado!!! El número era " + num);
@@ -54,18 +53,19 @@ function jugar() {
                 juego.NumIntentos++;
             }
         }
+        if(juego.NumIntentos === juego.MAX_INTENTOS) alert(`Has perdido... el numero era ${juego.NumeroABuscar}`);
     }while(confirm("¿Quieres volver a jugar?"));
 }
 
-//jugar();
+jugar();
 
 
 //Ejercicio 3
 
 function inicializarArray(longitud, valor) {
     if (typeof longitud !== 'number') return 'ERROR de longitud';
-    let array = new Array(longitud);
-    for (let i = 0; i < array.length; i++)
+    let array = [];
+    for (let i = 0; i < longitud; i++)
         array[i] = valor;
     return array;
 }
