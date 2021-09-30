@@ -11,26 +11,30 @@
 
     header{
         width:90%;
-        height: 40px;
+        height: 55px;
         background-color: white;
         margin: auto;
-        margin-top: 3px;
         text-align: right;
-        padding-top: 10px;
         margin-bottom: 1em;
+        display: grid;
+        grid-auto-rows: "#resultado #pantalla";
 
         #pantalla{
             width: 90%;
             margin: auto;
-            font-size: 2em;           
+            margin-bottom: 3px;
+            font-size: 2em;
+        }
+        #resultado{
+            width: 90%;
+            margin: auto;
+            font-size: 1em;
+            color: #555;
         }
         
     }
 
     article{
-        display: grid;
-        gap: 2em;
-        grid-template-areas: repeat(5, "button buttton button button");
         text-align: center;
 
         .boton{
