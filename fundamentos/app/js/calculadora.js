@@ -33,6 +33,8 @@ class Calculadora {
             case '/':
                 rslt /= valor;
                 break;
+            default:
+                rslt = valor;
         }
         this.Op = operador;
         this.Resultado = rslt.toString();
@@ -135,6 +137,8 @@ function calc() {
     btMultiplicar.addEventListener('click', clicarOperacion);
     btDividir.addEventListener('click', clicarOperacion);
     btIgual.addEventListener('click', clicarOperacion);
+
+    btVacio.addEventListener('click', ()=>{});
 }
 
 
