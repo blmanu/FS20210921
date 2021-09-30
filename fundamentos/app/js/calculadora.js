@@ -46,7 +46,7 @@ class Calculadora {
     limpiarTodo() {
         this.NumeroPantalla = '0';
         this.Resultado = '0';
-        this.operador = '+'
+        this.Op = '+'
     }
 
     borrar() {
