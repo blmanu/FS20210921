@@ -37,7 +37,17 @@ class Juego {
     }
 }
 
-function jugar() {
+function jugar(ev){
+    let juego = new Juego(10,100);
+    let lbPrompt = document.querySelector('#lbPrompt');
+    let txtNumero = document.querySelector('#txtNumero');
+    let btnJugar = document.querySelector('#btnJugar');
+    let txtMensaje = document.querySelector('#txtMensaje');
+
+    
+}
+
+function jugarPorAlert() {
     alert("Vamos a empezar a jugar.");    
     do {
         let max_intentos = 10;

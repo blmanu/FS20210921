@@ -1,0 +1,38 @@
+.contenedor {
+  width: 210px;
+  height: 300px;
+  margin: auto;
+  background-color: lightgray;
+  padding-top: 20px;
+  display: grid;
+  grid-template-areas: "header" "article";
+}
+.contenedor header {
+  width: 90%;
+  height: 40px;
+  background-color: white;
+  margin: auto;
+  margin-top: 3px;
+  text-align: right;
+  padding-top: 10px;
+  margin-bottom: 1em;
+}
+.contenedor header #pantalla {
+  width: 90%;
+  margin: auto;
+  font-size: 2em;
+}
+.contenedor article {
+  display: grid;
+  gap: 2em;
+  grid-template-areas: repeat(5, "button buttton button button");
+  text-align: center;
+}
+.contenedor article .boton {
+  margin-bottom: 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=calculadora.css.map */

@@ -11,14 +11,22 @@ describe("ejercicio 1", function () {
 });
 
 describe("ejercicio 2", function(){
-    let juego = new Juego();
-    juego.NumeroABuscar = 10;
+    let juego = null;
+
+    beforeAll(() => {
+        spyOn(Math, 'random').and.returnValue(0.10456);
+    })
+
+    beforeEach(() => {
+        juego = new Juego(1, 100);
+    })
+    
     it("comparacion mayor", () => {
-        expect(juego.comparar(5)).toBe("es mayor");
+        expect(juego.comparar(9)).toBe("es mayor");
     })
 
     it("comparacion menor", () => {
-        expect(juego.comparar(15)).toBe("es menor");
+        expect(juego.comparar(11)).toBe("es menor");
     })
 
     it("comparacion igual", () => {
@@ -60,7 +68,7 @@ describe("ejercicio 5", function () {
 
   let dniMal = ["00000000J", "09654HHH", null, undefined].forEach((caso) => {
     it(`DNI incorrecto ${caso}`, function () {
-      expect(esNif(caso)).toBeTrue();
+      expect(esNif(caso)).toBeFalse();
     });
   });
 });
