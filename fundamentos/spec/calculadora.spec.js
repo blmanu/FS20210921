@@ -1,5 +1,6 @@
+/* eslint-disable no-undef */
 fdescribe('calculadora', () => {
-    it('ponerDigito', () => {
+    xit('ponerDigito', () => {
         let c = new Calculadora();
         c.PonerDigito('3');
         expect(c.NumeroPantalla).toBe('3');
@@ -10,7 +11,7 @@ fdescribe('calculadora', () => {
 
     })
 
-    it('calcular', () => {
+    xit('calcular', () => {
         let c = new Calculadora();
         c.PonerDigito('3');
         c.Calcular('-');
@@ -27,5 +28,19 @@ fdescribe('calculadora', () => {
         expect(c.Resultado).toBe('5');
         expect(c.Op).toBe('+');
 
+    })
+
+    it('cambio punto coma', () => {
+        let c = new Calculadora();
+        expect(c.cambioComaPunto('8,2')).toBe('8.2');
+        expect(c.cambioComaPunto('0,222')).toBe('0.222');
+        expect(c.cambioComaPunto('5')).toBe('5');
+    })
+
+    xit('cambio coma punto', () => {
+        let c = new Calculadora();
+        expect(c.cambioPuntoComa('8.2')).toBe('8,2');
+        expect(c.cambioPuntoComa('0.222')).toBe('0,222');
+        expect(c.cambioPuntoComa('5')).toBe('5');
     })
 })
