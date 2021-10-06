@@ -31,9 +31,12 @@ html {
 
 .result{
   height: 40px;
-  padding-right:20px;
+  padding-right:30px;
   padding-left: 20px;
   font-size: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 .calculation{
@@ -41,6 +44,9 @@ html {
   padding-right: 30px;
   padding-left: 20px;
   font-size: 5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 button {

@@ -77,7 +77,9 @@ export class CalculadoraComponent implements OnInit {
       this.resultado.toString()
     )}`;
     if (this.op === '=') {
-      this.numeroPantalla = this.resultado.toString();
+      this.numeroPantalla = `${this.cambioPuntoComa(
+        this.resultado.toString()
+      )}`;
       //this.excedePantalla();
     } else {
       if (this.op === '*') this.resultadoPantalla += ` x `;
