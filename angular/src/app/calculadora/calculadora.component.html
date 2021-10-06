@@ -1,0 +1,84 @@
+<div class="container my-4">
+  <div class="calculator card">
+
+    <input type="text" class="calculator-screen result z-depth-2" value={{ResultadoPantalla}} disabled />
+    <input type="text" class="calculator-screen calculation z-depth-1" value={{NumeroPantalla}} disabled />
+
+    <div class="calculator-keys">
+      <button type="button" class="operator btn btn-info" value="+" (click)="Calcular('+')">+</button>
+      <button type="button" class="operator btn btn-info" value="-" (click)="Calcular('-')">-</button>
+      <button type="button" class="operator btn btn-info" value="*" (click)="Calcular('*')">
+        &times;
+      </button>
+      <button type="button" class="operator btn btn-info" value="/" (click)="Calcular('/')">
+        &divide;
+      </button>
+
+      <button type="button" value="7" class="btn btn-light waves-effect" (click)="PonerDigito('7')">
+        7
+      </button>
+      <button type="button" value="8" class="btn btn-light waves-effect" (click)="PonerDigito('8')">
+        8
+      </button>
+      <button type="button" value="9" class="btn btn-light waves-effect" (click)="PonerDigito('9')">
+        9
+      </button>
+
+      <button type="button" value="4" class="btn btn-light waves-effect" (click)="PonerDigito('4')">
+        4
+      </button>
+      <button type="button" value="5" class="btn btn-light waves-effect" (click)="PonerDigito('5')">
+        5
+      </button>
+      <button type="button" value="6" class="btn btn-light waves-effect" (click)="PonerDigito('6')">
+        6
+      </button>
+
+      <button type="button" value="1" class="btn btn-light waves-effect" (click)="PonerDigito('1')">
+        1
+      </button>
+      <button type="button" value="2" class="btn btn-light waves-effect" (click)="PonerDigito('2')">
+        2
+      </button>
+      <button type="button" value="3" class="btn btn-light waves-effect" (click)="PonerDigito('3')">
+        3
+      </button>
+
+      <button type="button" value="0" class="btn btn-light waves-effect" (click)="PonerDigito('0')">
+        0
+      </button>
+      <button
+        type="button"
+        class="decimal function btn btn-secondary"
+        value=","
+        (click)="ponerComa()"
+      >
+        ,
+      </button>
+      <button
+        type="button"
+        class="all-clear function btn btn-danger btn-sm"
+        value="all-clear"
+        (click)="limpiarTodo()"
+      >
+        AC
+      </button>
+
+      <button
+        type="button"
+        class="delete operator btn btn-default"
+        (click)="borrar()"
+      >
+      <i class="fas fa-backspace"></i>
+      </button>
+      <button
+        type="button"
+        class="equal-sign operator btn btn-default"
+        value="="
+        (click)="Calcular('=')"
+      >
+        =
+      </button>
+    </div>
+  </div>
+</div>
