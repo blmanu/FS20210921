@@ -7,7 +7,7 @@ import { NotificationService, NotificationType } from '../common-services';
   templateUrl: './demos.component.html',
   styleUrls: ['./demos.component.scss'],
 })
-export class DemosComponent implements OnInit, OnDestroy {
+export class DemosComponent implements OnInit /*, OnDestroy*/ {
   private nombre: string = 'mundo';
   private suscriptor: Unsubscribable | undefined;
 
@@ -66,17 +66,17 @@ export class DemosComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.suscriptor = this.vm.Notificacion.subscribe((n) => {
+    /*this.suscriptor = this.vm.Notificacion.subscribe((n) => {
       if (n.Type !== NotificationType.error) {
         return;
       }
       window.alert(`Suscripcion: ${n.Message}`);
       this.vm.remove(this.vm.Listado.length - 1);
-    });
+    });*/
   }
-  ngOnDestroy(): void {
+  /*ngOnDestroy(): void {
     if (this.suscriptor) {
       this.suscriptor.unsubscribe();
     }
-  }
+  }*/
 }

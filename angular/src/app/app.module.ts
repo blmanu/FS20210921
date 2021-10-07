@@ -16,6 +16,8 @@ import { MainModule } from './main';
 import { CommonServicesModule } from './common-services';
 import { SecurityModule } from './security';
 import { environment } from 'src/environments/environment';
+import { FormularioComponent } from './formulario/formulario.component';
+import { ClienteFormularioComponent } from './cliente-formulario/cliente-formulario.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { environment } from 'src/environments/environment';
     DemosComponent,
     DinamicoComponent,
     CalculadoraComponent,
+    FormularioComponent,
+    ClienteFormularioComponent,
   ],
   imports: [
     BrowserModule, FormsModule,

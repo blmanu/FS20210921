@@ -2,6 +2,7 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { NotificationComponent } from './notification/notification.component';
+import { NotificationModalComponent } from './notification-modal/notification-modal.component';
 
 
 
@@ -9,10 +10,12 @@ import { NotificationComponent } from './notification/notification.component';
   declarations: [
     NotificationComponent,
     HomeComponent,
+    NotificationModalComponent,
   ],
   exports: [
     NotificationComponent,
     HomeComponent,
+    NotificationModalComponent,
   ],
   imports: [
     CommonModule
