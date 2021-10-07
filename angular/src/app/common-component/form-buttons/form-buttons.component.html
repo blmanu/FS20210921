@@ -1,1 +1,4 @@
-<p>form-buttons works!</p>
+<div>
+  <input type="button" value="send" (click)="send.emit(send)" [disabled]="IsVisible">
+  <input type="button" value="cancel" (click)="cancel.emit(cancel)">
+</div>

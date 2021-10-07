@@ -10,6 +10,10 @@ import { ShowErrorsMessagesComponent } from './show-errors-messages/show-errors-
     FormButtonsComponent,
     ShowErrorsMessagesComponent
   ],
+  exports:[
+    FormButtonsComponent,
+    ShowErrorsMessagesComponent
+  ],
   imports: [
     CommonModule
   ]

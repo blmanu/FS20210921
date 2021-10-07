@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { ClienteViewModel } from 'src/app/cliente-formulario/cliente-formulario.component';
+
 
 @Component({
   selector: 'app-form-buttons',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormButtonsComponent implements OnInit {
 
-  constructor() { }
+
+
+  constructor(public vm: ClienteViewModel) { }
+
+  @Output() send: EventEmitter<any> = new EventEmitter();
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+  @Input() IsVisible: boolean | null = false;
 
   ngOnInit(): void {
   }
