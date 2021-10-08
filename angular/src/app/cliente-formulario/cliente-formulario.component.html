@@ -2,6 +2,7 @@
   <label for="customer_id">*Código</label>
   <input
     type="number"
+    [class.is-invalid]="codigo.invalid"
     id="customer_id"
     name="customer_id"
     [(ngModel)]="vm.Elemento.codigo"
@@ -26,6 +27,7 @@
   <label for="first_name">*Nombre</label>
   <input
     type="text"
+    [class.is-invalid]="nombre.invalid"
     id="first_name"
     name="first_name"
     [(ngModel)]="vm.Elemento.nombre"
@@ -42,6 +44,7 @@
   <label for="last_name">Apellidos</label>
   <input
     type="text"
+    [class.is-invalid]="apellidos.invalid"
     id="last_name"
     name="last_name"
     minlength="2"
@@ -56,6 +59,7 @@
   <label for="email">*Correo</label>
   <input
     type="email"
+    [class.is-invalid]="correo.invalid"
     id="email"
     name="email"
     placeholder="Correo electrónico"
@@ -70,18 +74,17 @@
     <label for="address_id">Dirección</label>
     <div
       class="field__radio"
-      [(ngModel)]="vm.Elemento.direccion"
-      #direccion="ngModel"
     >
       <input
         type="radio"
         id="address_id"
         name="address_id"
+        [(ngModel)]="vm.Elemento.direccion"
         checked
         value="Casa"
       />
       Casa
-      <input type="radio" name="address_id" value="Trabajo" />
+      <input type="radio" name="address_id" [(ngModel)]="vm.Elemento.direccion" value="Trabajo" />
       Trabajo
     </div>
   </div>
@@ -114,6 +117,7 @@
   <label for="nif">*DNI</label>
   <input
     type="text"
+    [class.is-invalid]="dni.invalid"
     id="nif"
     name="nif"
     required
@@ -121,6 +125,7 @@
     [(ngModel)]="vm.Elemento.dni"
     #dni="ngModel"
   />
+  <app-show-errors-messages [errors]="dni.errors"></app-show-errors-messages>
   <app-form-buttons
     (send)="vm.send()"
     (cancel)="vm.cancel()"

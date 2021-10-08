@@ -1,26 +1,55 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-show-errors-messages',
   templateUrl: './show-errors-messages.component.html',
   styleUrls: ['./show-errors-messages.component.scss']
 })
-export class ShowErrorsMessagesComponent implements OnInit {
-
-  mensaje: string = ''
-  constructor() { }
-
+export class ShowErrorsMessagesComponent implements OnChanges  {
   @Input() errors: any;
 
-  mensajeError(){
-    if(this.errors?.required) this.mensaje="Es obligatorio."
-    else if(this.errors?.minlength && this.errors?.maxlength) this.mensaje=`Debe tener entre ${this.errors?.minlength?.minlength} y ${this.errors?.maxlength?.maxlength} letras`
-    else if(this.errors?.min) this.mensaje=`Debe ser mayor que ${this.errors?.min?.min}`
-    else if(this.errors?.email) this.mensaje="No es un correo electrónico valido"
-    else this.mensaje='';
-  }
+  mensaje = '';
+  hidden = false;
 
-  ngOnInit(): void {
+  constructor() { }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (!this.errors) {
+      this.hidden = true;
+      return;
+    }
+    let msg = '';
+    for (let err in this.errors) {
+      switch (err) {
+        case 'required':
+          msg += 'Es obligatorio. ';
+          break;
+        case 'minlength':
+          msg += `Como mínimo debe tener ${this.errors[err].requiredLength} caracteres. `;
+          break;
+        case 'maxlength':
+          msg += `Como máximo debe tener ${this.errors[err].requiredLength} caracteres. `;
+          break;
+        case 'pattern':
+        case 'email':
+          msg += 'El formato no es correcto. ';
+          break;
+        case 'min':
+          msg += `El valor debe ser mayor o igual a ${this.errors[err].min}. `;
+          break;
+        case 'max':
+          msg += `El valor debe ser inferior o igual a ${this.errors[err].max}. `;
+          break;
+        default:
+          if (typeof this.errors[err] === 'string')
+            msg += `${this.errors[err]}. `;
+          else if (typeof this.errors[err]?.message === 'string')
+            msg += `${this.errors[err].message}. `;
+          break;
+      }
+    }
+    this.mensaje = msg.trim();
+    this.hidden = this.mensaje === '';
   }
 
 }
