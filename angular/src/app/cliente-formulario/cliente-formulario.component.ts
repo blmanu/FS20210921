@@ -66,7 +66,6 @@ export class ClienteViewModel {
   public delete() {}
 
   public cancel() {
-    alert("cancel");
     this.Elemento = {
       codigo: null,
       nombre: '',
@@ -82,7 +81,6 @@ export class ClienteViewModel {
   }
 
   public send() {
-    alert("send");
     this.notify.add(
       (this.IsAdd ? 'Nuevos: ' : 'Modificados: ') +
         JSON.stringify(this.Elemento),

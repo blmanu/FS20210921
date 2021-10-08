@@ -10,7 +10,9 @@
     required
     data-label="otro"
     min="0"
-  />
+  /><app-show-errors-messages
+    [errors]="codigo.errors"
+  ></app-show-errors-messages>
   <label for="store_id">Tienda</label>
   <select
     id="store_id"
@@ -23,7 +25,6 @@
   </select>
   <label for="first_name">*Nombre</label>
   <input
-    class="colspan-3"
     type="text"
     id="first_name"
     name="first_name"
@@ -35,10 +36,11 @@
     data-label="Nombre"
     minlength="2"
     maxlength="10"
-  />
+  /><app-show-errors-messages
+    [errors]="nombre.errors"
+  ></app-show-errors-messages>
   <label for="last_name">Apellidos</label>
   <input
-    class="colspan-3"
     type="text"
     id="last_name"
     name="last_name"
@@ -48,10 +50,11 @@
     #apellidos="ngModel"
     minlength="2"
     maxlength="10"
-  />
+  /><app-show-errors-messages
+    [errors]="apellidos.errors"
+  ></app-show-errors-messages>
   <label for="email">*Correo</label>
   <input
-    class="colspan-3"
     type="email"
     id="email"
     name="email"
@@ -60,17 +63,27 @@
     #correo="ngModel"
     required
     email
-  />
-  <label for="address_id">Dirección</label>
-  <div
-    class="field__radio"
-    [(ngModel)]="vm.Elemento.direccion"
-    #direccion="ngModel"
-  >
-    <input type="radio" id="address_id" name="address_id" checked value="1" />
-    Casa
-    <input type="radio" name="address_id" value="2" />
-    Trabajo
+  /><app-show-errors-messages
+    [errors]="correo.errors"
+  ></app-show-errors-messages>
+  <div class="field">
+    <label for="address_id">Dirección</label>
+    <div
+      class="field__radio"
+      [(ngModel)]="vm.Elemento.direccion"
+      #direccion="ngModel"
+    >
+      <input
+        type="radio"
+        id="address_id"
+        name="address_id"
+        checked
+        value="Casa"
+      />
+      Casa
+      <input type="radio" name="address_id" value="Trabajo" />
+      Trabajo
+    </div>
   </div>
   <label for="active">Activo</label>
   <input
