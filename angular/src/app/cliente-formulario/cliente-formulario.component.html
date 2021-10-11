@@ -11,9 +11,7 @@
     required
     data-label="otro"
     min="0"
-  /><app-show-errors-messages
-    [errors]="codigo.errors"
-  ></app-show-errors-messages>
+  /><output class="error" [myShowErrors]="codigo.errors"></output>
   <label for="store_id">Tienda</label>
   <select
     id="store_id"
@@ -38,9 +36,7 @@
     data-label="Nombre"
     minlength="2"
     maxlength="10"
-  /><app-show-errors-messages
-    [errors]="nombre.errors"
-  ></app-show-errors-messages>
+  /><output class="error" [myShowErrors]="nombre.errors"></output>
   <label for="last_name">Apellidos</label>
   <input
     type="text"
@@ -67,9 +63,7 @@
     #correo="ngModel"
     required
     email
-  /><app-show-errors-messages
-    [errors]="correo.errors"
-  ></app-show-errors-messages>
+  /><output class="error" [myShowErrors]="correo.errors"></output>
   <div class="field">
     <label for="address_id">Dirección</label>
     <div
@@ -105,6 +99,7 @@
     name="create_date"
     [(ngModel)]="vm.Elemento.fechaCreacion"
     #fechaCreacion="ngModel"
+    pastOrPresent
   />
   <label for="last_update">Última modificacion</label>
   <input
