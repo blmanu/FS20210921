@@ -7,6 +7,7 @@ import { CommonServicesModule } from '../common-services';
 import { CONTACTOS_COMPONENTES } from './componente.component';
 import { FormButtonsComponent } from '../common-component';
 import { CommonComponentModule } from '../common-component/common-component.module';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 
@@ -16,7 +17,7 @@ import { CommonComponentModule } from '../common-component/common-component.modu
   ],
   imports: [
     CommonModule, FormsModule, RouterModule.forChild([]),
-    MyCoreModule, CommonServicesModule, CommonComponentModule,
+    MyCoreModule, CommonServicesModule, CommonComponentModule, NgxPaginationModule
   ],
   exports:[
     CONTACTOS_COMPONENTES

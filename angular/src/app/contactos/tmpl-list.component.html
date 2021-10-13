@@ -10,7 +10,12 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let item of VM.Listado">
+    <tr
+      *ngFor="
+        let item of VM.Listado
+          | paginate: { itemsPerPage: 4, currentPage: page }
+      "
+    >
       <td>
         <div class="container">
           <div class="row">
@@ -51,5 +56,11 @@
         </div>
       </td>
     </tr>
+    <pagination-controls
+      (pageChange)="page = $event"
+      previousLabel="Anterior"
+      nextLabel="Siguiente"
+    >
+    </pagination-controls>
   </tbody>
 </table>

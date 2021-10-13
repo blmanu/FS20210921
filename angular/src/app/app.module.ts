@@ -22,6 +22,7 @@ import { CommonComponentModule } from './common-component/common-component.modul
 import { HttpClientModule } from '@angular/common/http';
 import { ContactosModule } from './contactos';
 import { ContactosViewModelService } from './contactos/servicios.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -31,11 +32,12 @@ import { ContactosViewModelService } from './contactos/servicios.service';
     CalculadoraComponent,
     FormularioComponent,
     ClienteFormularioComponent,
+
   ],
   imports: [
     BrowserModule, FormsModule, HttpClientModule,
     AppRoutingModule, MyCoreModule, MainModule, CommonServicesModule, SecurityModule, CommonComponentModule,
-    ContactosModule
+    ContactosModule, NgxPaginationModule,
   ],
   providers: [
     LoggerService,
