@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { CalculadoraComponent } from '../calculadora/calculadora.component';
 import { ClienteFormularioComponent } from '../cliente-formulario/cliente-formulario.component';
+import { ContactosModule } from '../contactos';
+import { ContactosComponent } from '../contactos/componente.component';
+import { ContactosViewModelService } from '../contactos/servicios.service';
 import { DemosComponent } from '../demos/demos.component';
 import { FormularioComponent } from '../formulario/formulario.component';
 import { HomeComponent, NotificationComponent } from '../main';
@@ -13,11 +16,12 @@ import { HomeComponent, NotificationComponent } from '../main';
 })
 export class DinamicoComponent implements OnInit {
   menu = [
-    { texto: 'Formulario Cliente', icono: '', componente: ClienteFormularioComponent},
-    { texto: 'formulario', icono: '', componente: FormularioComponent},
-    { texto: 'inicio', icono: '', componente: HomeComponent },
-    { texto: 'demos', icono: '', componente: DemosComponent },
-    { texto: 'calculadora', icono: '', componente: CalculadoraComponent },
+    { texto: 'Contacto', icono: 'fas fa-user-tie', componente: ContactosComponent},
+    { texto: 'Formulario Cliente', icono: 'fas fa-user-tie', componente: ClienteFormularioComponent},
+    { texto: 'formulario', icono: 'fas fa-user-tie', componente: FormularioComponent},
+    { texto: 'inicio', icono: 'fas fa-home', componente: HomeComponent },
+    { texto: 'demos', icono: 'fas fa-chalkboard-teacher', componente: DemosComponent },
+    { texto: 'calculadora', icono: 'fas fa-calculator', componente: CalculadoraComponent },
   ];
 
   actual = this.menu[0].componente;

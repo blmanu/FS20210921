@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
 import { NotificationComponent } from './notification/notification.component';
 import { NotificationModalComponent } from './notification-modal/notification-modal.component';
+import { AjaxWaitComponent } from './ajax-wait';
 
 
 
@@ -11,11 +12,13 @@ import { NotificationModalComponent } from './notification-modal/notification-mo
     NotificationComponent,
     HomeComponent,
     NotificationModalComponent,
+    AjaxWaitComponent
   ],
   exports: [
     NotificationComponent,
     HomeComponent,
     NotificationModalComponent,
+    AjaxWaitComponent
   ],
   imports: [
     CommonModule

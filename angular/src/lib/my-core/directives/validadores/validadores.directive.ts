@@ -71,7 +71,7 @@ export function ExcludeValidation(start: any, end: any): ValidatorFn {
 }
 
 @Directive({
-  selector: '[exclude-start][formControlName],[exclude-start][formControl],[exclude-start][ngModel],[formControlName],[exclude-end][formControl],[exclude-end][ngModel]',
+  selector: '[exclude-start][formControlName],[exclude-start][formControl],[exclude-start][ngModel],[exclude-end][formControlName],[exclude-end][formControl],[exclude-end][ngModel]',
   providers: [{ provide: NG_VALIDATORS, useExisting: ExcludeValidator, multi: true }]
 })
 export class ExcludeValidator implements Validator {

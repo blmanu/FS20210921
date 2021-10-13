@@ -1,5 +1,6 @@
 import { Directive } from '@angular/core';
 import { ValidatorFn, AbstractControl, NG_VALIDATORS, Validator, ValidationErrors } from '@angular/forms';
+import validatorjs from 'validator';
 
 
 // ref: https://github.com/validatorjs/validator.js/blob/master/src/lib/isIBAN.js
