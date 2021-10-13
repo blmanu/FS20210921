@@ -14,12 +14,7 @@
         required
         min="0"
       />
-      <div
-        class="invalid-feedback"
-        [hidden]="!id.hasError('required') || miForm.pristine"
-      >
-        Es obligatorio
-      </div>
+      <output class="invalid-feedback" [myShowErrors]="id.errors"> </output>
     </div>
     <div class="form-group col-md-2">
       <label class="form-label" for="tratamiento">Tratamiento:</label>
@@ -55,15 +50,7 @@
         minlength="2"
         maxlength="50"
       />
-      <div class="invalid-feedback" [hidden]="!nombre?.errors?.required">
-        Es obligatorio
-      </div>
-      <div
-        class="invalid-feedback"
-        [hidden]="!nombre?.errors?.minlength && !nombre?.errors?.maxlength"
-      >
-        Debe tener entre 2 y 10 letras
-      </div>
+      <output class="invalid-feedback" [myShowErrors]="nombre.errors"> </output>
     </div>
     <div class="form-group col-md-4">
       <label class="form-label" for="apellidos">Apellidos:</label>
@@ -78,14 +65,8 @@
         minlength="2"
         maxlength="50"
       />
-      <div
-        class="invalid-feedback"
-        [hidden]="
-          !apellidos?.errors?.minlength && !apellidos?.errors?.maxlength
-        "
-      >
-        Debe tener entre 2 y 10 letras
-      </div>
+      <output class="invalid-feedback" [myShowErrors]="apellidos.errors">
+      </output>
     </div>
   </div>
   <div class="form-row">
@@ -101,9 +82,8 @@
         #telefono="ngModel"
         maxlength="11"
       />
-      <div class="invalid-feedback" [hidden]="!telefono?.errors?.maxlength">
-        No debe tener mas de 9 dígitos
-      </div>
+      <output class="invalid-feedback" [myShowErrors]="telefono.errors">
+      </output>
     </div>
     <div class="form-group col-md-4">
       <label class="form-label" for="email">Correo:</label>
@@ -115,21 +95,11 @@
         id="email"
         [(ngModel)]="VM.Elemento.email"
         #email="ngModel"
+        maxlength="100"
         email
         lowercase
-        maxlength="100"
       />
-      <div class="invalid-feedback" [hidden]="email.valid">
-        <span [hidden]="!email?.errors?.lowercase">
-          Debe ir en minúsculas.
-        </span>
-        <span [hidden]="!email?.errors?.maxlength"
-          >Debe tener menos 100 caracteres.
-        </span>
-        <span [hidden]="!email?.errors?.email"
-          >Debe ser un correo electrónico.
-        </span>
-      </div>
+      <output class="invalid-feedback" [myShowErrors]="email.errors"> </output>
     </div>
     <div class="form-group col-md-2">
       <label class="form-label" for="nacimiento">F. Nacimiento:</label>
@@ -197,25 +167,13 @@
         [(ngModel)]="VM.Elemento.avatar"
         #avatar="ngModel"
         maxlength="500"
-      />
-      <div class="invalid-feedback" [hidden]="!avatar?.errors?.maxlength">
-        Debe tener menos 500 caracteres.
-      </div>
+      /><output class="invalid-feedback" [myShowErrors]="avatar.errors">
+      </output>
     </div>
   </div>
-  <div class="form-group">
-    <input
-      type="button"
-      class="btn btn-success"
-      value="Enviar"
-      (click)="VM.send()"
-      [disabled]="miForm.invalid"
-    />
-    <input
-      type="button"
-      class="btn btn-info"
-      value="Volver"
-      (click)="VM.cancel()"
-    />
-  </div>
+  <app-form-buttons
+    (send)="VM.send()"
+    (cancel)="VM.cancel()"
+    [send-disabled]="miForm.invalid"
+  ></app-form-buttons>
 </form>

@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ContactosViewModelService } from './servicios.service';
+import {FormButtonsComponent, ShowErrorsMessagesComponent } from '../common-component'
 
 @Component({
   selector: 'app-contactos',

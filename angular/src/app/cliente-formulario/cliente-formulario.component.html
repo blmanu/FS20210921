@@ -124,6 +124,6 @@
   <app-form-buttons
     (send)="vm.send()"
     (cancel)="vm.cancel()"
-    [IsVisible]="miForm.invalid"
+    [send-disabled]="miForm.invalid"
   ></app-form-buttons>
 </form>
