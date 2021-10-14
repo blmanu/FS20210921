@@ -67,61 +67,6 @@ export class BotonesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {}
 }
 
-/* @Component({
-  selector: 'app-contactos-list',
-  templateUrl: './tmpl-list.con-rutas.component.html',
-  styleUrls: ['./componente.component.scss'],
-})
-export class ContactosListComponent implements OnInit, OnDestroy {
-  constructor(protected vm: ContactosViewModelService) {}
-  public get VM(): ContactosViewModelService {
-    return this.vm;
-  }
-  ngOnInit(): void {}
-  ngOnDestroy(): void {}
-}
-
-@Component({
-  selector: 'app-contactos-add',
-  templateUrl: './tmpl-form.component.html',
-  styleUrls: ['./componente.component.scss'],
-})
-export class ContactosAddComponent implements OnInit {
-  constructor(protected vm: ContactosViewModelService) {}
-  public get VM(): ContactosViewModelService {
-    return this.vm;
-  }
-  ngOnInit(): void {}
-}
-
-@Component({
-  selector: 'app-contactos-edit',
-  templateUrl: './tmpl-form.component.html',
-  styleUrls: ['./componente.component.scss'],
-})
-export class ContactosEditComponent implements OnInit, OnDestroy {
-  constructor(protected vm: ContactosViewModelService) {}
-  public get VM(): ContactosViewModelService {
-    return this.vm;
-  }
-  ngOnInit(): void {}
-  ngOnDestroy(): void {}
-}
-
-@Component({
-  selector: 'app-contactos-view',
-  templateUrl: './tmpl-view.component.html',
-  styleUrls: ['./componente.component.scss'],
-})
-export class ContactosViewComponent implements OnInit, OnDestroy {
-  constructor(protected vm: ContactosViewModelService) {}
-  public get VM(): ContactosViewModelService {
-    return this.vm;
-  }
-  ngOnInit(): void {}
-  ngOnDestroy(): void {}
-}
- */
 @Component({
   selector: 'app-contactos-list',
   templateUrl: './tmpl-list.con-rutas.component.html',
