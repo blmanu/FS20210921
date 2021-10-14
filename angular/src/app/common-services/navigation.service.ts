@@ -6,10 +6,14 @@ import { Title } from '@angular/platform-browser';
 
 @Injectable({ providedIn: 'root' })
 export class NavigationService {
-  private readonly MAX_CACHE = 5
+  private readonly MAX_CACHE = 5;
   private history: Array<string> = [];
-  constructor(private router: Router, private title: Title, private logger: LoggerService) {
-    router.events.subscribe(e => {
+  constructor(
+    private router: Router,
+    private title: Title,
+    private logger: LoggerService
+  ) {
+    router.events.subscribe((e) => {
       if (e instanceof ActivationStart) {
         let ev: ActivationStart = e as ActivationStart;
         if (ev.snapshot?.data?.pageTitle) {
@@ -21,7 +25,7 @@ export class NavigationService {
       if (e instanceof NavigationEnd) {
         let ev: NavigationEnd = e as NavigationEnd;
         this.history.push(ev.url);
-        if(this.history.length > this.MAX_CACHE) this.history.splice(0, 1)
+        if (this.history.length > this.MAX_CACHE) this.history.splice(0, 1);
         logger.log(`Navigate to ${e.url}`);
       }
     });

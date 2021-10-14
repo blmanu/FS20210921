@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
   ERROR_LEVEL: 1,
-  securityApiURL: '/a',
+  securityApiURL: '/',
   apiURL: '/api/',
 };
