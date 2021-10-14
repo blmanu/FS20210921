@@ -16,7 +16,7 @@ import { HomeComponent, NotificationComponent } from '../main';
 })
 export class DinamicoComponent implements OnInit {
   menu = [
-    { texto: 'Contacto', icono: 'fas fa-user-tie', componente: ContactosComponent},
+    { texto: 'Contacto', icono: 'fas fa-address-book', componente: ContactosComponent},
     { texto: 'Formulario Cliente', icono: 'fas fa-user-tie', componente: ClienteFormularioComponent},
     { texto: 'formulario', icono: 'fas fa-user-tie', componente: FormularioComponent},
     { texto: 'inicio', icono: 'fas fa-home', componente: HomeComponent },

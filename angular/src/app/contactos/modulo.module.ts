@@ -8,6 +8,7 @@ import { CONTACTOS_COMPONENTES } from './componente.component';
 import { FormButtonsComponent } from '../common-component';
 import { CommonComponentModule } from '../common-component/common-component.module';
 import { NgxPaginationModule } from 'ngx-pagination';
+import {PaginatorModule} from 'primeng/paginator';
 
 
 
@@ -17,7 +18,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   ],
   imports: [
     CommonModule, FormsModule, RouterModule.forChild([]),
-    MyCoreModule, CommonServicesModule, CommonComponentModule, NgxPaginationModule
+    MyCoreModule, CommonServicesModule, CommonComponentModule, NgxPaginationModule, PaginatorModule
   ],
   exports:[
     CONTACTOS_COMPONENTES
