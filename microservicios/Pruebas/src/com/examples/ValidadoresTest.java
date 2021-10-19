@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.params.provider.EmptySource;
+import org.junit.jupiter.params.provider.NullSource;
 
 class ValidadoresTest {
 	Validadores val;
@@ -32,13 +34,15 @@ class ValidadoresTest {
 	
 	@ParameterizedTest
 	@DisplayName("DNIs no validos")
-	@CsvSource({ "4444", "hh", "12345678A", "''", "@NullString" })
+	@EmptySource
+	@CsvSource({ "4444", "hh", "12345678A", "s" })
 	void testNifErroneo(String dni) {
 		assertFalse(val.isNIF(dni));
 	}
 	
 	@ParameterizedTest
 	@DisplayName("DNIs validos")
+	@NullSource
 	@CsvSource({ "44667260H", "15500380J", "28714764T"})
 	void testNifBueno(String dni) {
 		assertTrue(val.isNIF(dni));
