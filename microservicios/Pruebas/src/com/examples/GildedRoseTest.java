@@ -7,9 +7,6 @@ import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
@@ -47,7 +44,7 @@ class GildedRoseTest {
 		gildedRose.updateQuality();
 		assertAll("gildedRose",
 			 ()-> assertEquals(arr[0].name, gildedRose.items[0].name),
-			 ()-> assertEquals(arr[0].sellIn, gildedRose.items[0].sellIn),
+			 ()-> assertEquals(10, gildedRose.items[0].sellIn),
 			 ()-> assertEquals(arr[0].quality, gildedRose.items[0].quality)
 		);
 	}

@@ -43,7 +43,7 @@ class ValidadoresTest {
 	@ParameterizedTest
 	@DisplayName("DNIs validos")
 	@NullSource
-	@CsvSource({ "44667260H", "15500380J", "28714764T"})
+	@CsvSource({ "44667260H", "15500380j", "28714764T", "1234s"})
 	void testNifBueno(String dni) {
 		assertTrue(val.isNIF(dni));
 	}	

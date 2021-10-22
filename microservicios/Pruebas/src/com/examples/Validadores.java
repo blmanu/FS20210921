@@ -7,7 +7,7 @@ public class Validadores {
 	public boolean isNIF(String dni) {
 		if (dni == null)
 			return true;
-		Pattern patron = Pattern.compile("[0-9]{7,8}[A-Z a-z]");
+		Pattern patron = Pattern.compile("^\\d{1,8}[A-Z a-z]$");
 		if (!patron.matcher(dni).matches()) {
 			return false;
 		}
