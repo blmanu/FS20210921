@@ -39,42 +39,44 @@ public class CategoryResource {
 
 	@Autowired
 	CategoryService srv;
-	
+
 	@GetMapping
 	public List<Category> getAll() {
-		return (List<Category>) srv.getByProjection(Category.class);
+		return (List<Category>) srv.getAll();
 	}
-	
+
 	@GetMapping(path = "/{id}")
 	public Category getOne(@PathVariable int id) throws NotFoundException {
 		var categoria = srv.getOne(id);
-		if(categoria.isEmpty())
+		if (categoria.isEmpty())
 			throw new NotFoundException();
 		else
-			return new Category(id);
+			return new Category(categoria.get().getCategoryId(), categoria.get().getName());
 	}
-	
+
 	@GetMapping(path = "/{id}/peliculas")
 	@Transactional
 	public List<FilmShort> getPelis(@PathVariable int id) throws NotFoundException {
 		var categoria = srv.getOne(id);
-		if(categoria.isEmpty())
+		if (categoria.isEmpty())
 			throw new NotFoundException();
 		else {
-			return (List<FilmShort>) categoria.get().getFilmCategories().stream().map(item -> FilmShort.from(item)).collect(Collectors.toList());
+			return (List<FilmShort>) categoria.get().getFilmCategories().stream().map(item -> FilmShort.from(item))
+					.collect(Collectors.toList());
 		}
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Object> create(@Valid @RequestBody Category item) throws BadRequestException, DuplicateKeyException, InvalidDataException {
-		if(item == null)
+	public ResponseEntity<Object> create(@Valid @RequestBody Category item)
+			throws BadRequestException, DuplicateKeyException, InvalidDataException {
+		if (item == null)
 			throw new BadRequestException("Faltan los datos");
 		var newItem = srv.add(item);
 		URI location = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
-			.buildAndExpand(newItem.getCategoryId()).toUri();
+				.buildAndExpand(newItem.getCategoryId()).toUri();
 		return ResponseEntity.created(location).build();
 	}
-	
+
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable int id) {

@@ -39,7 +39,7 @@ public class LanguageResource {
 	
 	@GetMapping
 	public List<Language> getAll() {
-		return (List<Language>) srv.getByProjection(Language.class);
+		return (List<Language>) srv.getAll();
 	}
 	
 	@GetMapping(path = "/{id}")
@@ -48,7 +48,7 @@ public class LanguageResource {
 		if(idioma.isEmpty())
 			throw new NotFoundException();
 		else
-			return new Language(id);
+			return new Language(idioma.get().getLanguageId(), idioma.get().getName());
 	}
 	
 	@GetMapping(path = "/{id}/peliculas")
@@ -59,6 +59,17 @@ public class LanguageResource {
 			throw new NotFoundException();
 		else {
 			return (List<FilmShort>) categoria.get().getFilms().stream().map(item -> FilmShort.from(item)).collect(Collectors.toList());
+		}
+	}
+	
+	@GetMapping(path = "/{id}/peliculasVO")
+	@Transactional
+	public List<FilmShort> getPelisVO(@PathVariable int id) throws NotFoundException {
+		var categoria = srv.getOne(id);
+		if(categoria.isEmpty())
+			throw new NotFoundException();
+		else {
+			return (List<FilmShort>) categoria.get().getFilmsVO().stream().map(item -> FilmShort.from(item)).collect(Collectors.toList());
 		}
 	}
 	
