@@ -31,7 +31,7 @@ import com.example.exceptions.InvalidDataException;
 import com.example.exceptions.NotFoundException;
 
 @RestController
-@RequestMapping(path = "/categorias")
+@RequestMapping(path = "/idiomas")
 public class LanguageResource {
 
 	@Autowired
