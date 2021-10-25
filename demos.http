@@ -1,0 +1,30 @@
+GET http://localhost:8010/param/17?nom=hola
+Accept-Language: cristiano
+Accept: text/plain
+
+###
+
+GET  http://localhost:8010/actores?page=3&size=10&sort=firstName
+
+###
+
+GET http://localhost:8010/actores/2/peliculas
+
+
+###
+
+GET  http://localhost:8010/categorias
+
+###
+
+GET http://localhost:8010/categorias/2/peliculas
+
+###
+
+GET  http://localhost:8010/idiomas
+
+###
+
+GET http://localhost:8010/idiomas/2/peliculas
+
+###
