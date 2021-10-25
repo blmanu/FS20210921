@@ -9,11 +9,8 @@ public class Formato {
 	private int cont = 0;
 	
 	public String formatea(String cad) {
-		cont = getCont() + 1;
+		cont ++;
 		return cad != null ? cad.toUpperCase() : cad;
 	}
-
-	public int getCont() {
-		return cont;
-	}
+	public int getCont() { return cont; }
 }

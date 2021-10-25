@@ -1,8 +1,8 @@
 package com.example.exceptions;
 
 public class DuplicateKeyException extends Exception {
-
-	final static String MESSAGE_STRING = "Duplicate Key";
+	private static final long serialVersionUID = 1L;
+	private final static String MESSAGE_STRING = "Duplicate key";
 	
 	public DuplicateKeyException() {
 		this(MESSAGE_STRING);
@@ -13,7 +13,7 @@ public class DuplicateKeyException extends Exception {
 	}
 
 	public DuplicateKeyException(Throwable cause) {
-		this(MESSAGE_STRING,cause);
+		this(MESSAGE_STRING, cause);
 	}
 
 	public DuplicateKeyException(String message, Throwable cause) {

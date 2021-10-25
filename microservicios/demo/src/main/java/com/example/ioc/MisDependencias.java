@@ -9,6 +9,6 @@ public class MisDependencias {
 //	@Bean
 //	@Qualifier("bean")
 //	Servicio dameServicio() {
-//		return new ServicioImpl();
+//		return new ServicioImpl(new Formato());
 //	}
 }
