@@ -2,10 +2,17 @@ package com.example.domains.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.PastOrPresent;
+
+import org.hibernate.annotations.Generated;
+import org.hibernate.annotations.GenerationTime;
+import org.hibernate.validator.constraints.Length;
 
 import com.example.domains.core.EntityBase;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.sql.Timestamp;
 import java.util.List;
@@ -25,12 +32,19 @@ public class Language extends EntityBase<Language> implements Serializable {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="language_id")
+	@JsonProperty("id")
 	private int languageId;
 
 	@Column(name="last_update")
-	@JsonFormat(pattern = "yyyy-MM-dd")
+	@Generated(value = GenerationTime.ALWAYS)
+	//@JsonFormat(pattern = "yyyy-MM-dd")
+	//@PastOrPresent
+	@JsonIgnore
 	private Timestamp lastUpdate;
 
+	@NotBlank
+	@Length(max=20)
+	@JsonProperty("idioma")
 	private String name;
 
 	//bi-directional many-to-one association to Film
